@@ -3,6 +3,10 @@ package org.emil.designpattern.creational.builder;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * code taken from:
+ * https://www.tutorialspoint.com/design_pattern/builder_pattern.htm
+ */
 public class Meal {
 
     private List<Item> items = new ArrayList<Item>();
