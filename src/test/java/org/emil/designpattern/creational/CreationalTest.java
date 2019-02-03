@@ -28,12 +28,12 @@ public class CreationalTest{
         ProductFactory productFactory = ProductFactory.getInstance();
 
         Product food = productFactory.createNewProduct("perishable");
-
-        assertEquals(food.getTotalPrice(3), 9);
+    
+        assertEquals(9, food.getTotalPrice(3));
 
         Product table = productFactory.createNewProduct("non-perishable");
 
-        assertEquals(table.getTotalPrice(5), 25);
+        assertEquals(25, table.getTotalPrice(5));
 
     }
 
@@ -47,8 +47,8 @@ public class CreationalTest{
         
         Animal dog = new Animal(animalType,habitat);
 
-        assertEquals(dog.getAnimalType().getType(), "Mammal");
-        assertEquals(dog.getHabitat().getType(), "Land");
+        assertEquals("Mammal", dog.getAnimalType().getType());
+        assertEquals("Land",dog.getHabitat().getType());
 
         
         AnimalType parrotType = animalFactoryCreator.getFactory("bird").createAnimalType();
@@ -56,8 +56,8 @@ public class CreationalTest{
 
         Animal parrot = new Animal(parrotType, parrotHabitat);
 
-        assertEquals(parrot.getAnimalType().getType(), "Bird");
-        assertEquals(parrot.getHabitat().getType(), "Air");
+        assertEquals("Bird", parrot.getAnimalType().getType());
+        assertEquals("Air", parrot.getHabitat().getType());
 
     }
 
