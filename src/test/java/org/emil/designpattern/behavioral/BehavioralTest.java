@@ -7,6 +7,11 @@ import org.emil.designpattern.behavioral.chainofresponsibility.ConcreteHandler2;
 import org.emil.designpattern.behavioral.chainofresponsibility.ConcreteHandler3;
 import org.emil.designpattern.behavioral.chainofresponsibility.Handler;
 import org.emil.designpattern.behavioral.chainofresponsibility.Request;
+import org.emil.designpattern.behavioral.command.AbstractStock;
+import org.emil.designpattern.behavioral.command.Agent;
+import org.emil.designpattern.behavioral.command.BuyStock;
+import org.emil.designpattern.behavioral.command.SellStock;
+import org.emil.designpattern.behavioral.command.Stock;
 import org.junit.Test;
 
 public class BehavioralTest {
@@ -25,22 +30,40 @@ public class BehavioralTest {
 
         h1.handleRequest(request1);
 
-       assertEquals("Positive", request1.getDesciption());
+        assertEquals("Positive", request1.getDesciption());
 
+        Request request2 = new Request(-2, "");
 
-       Request request2 = new Request(-2, "");
+        h1.handleRequest(request2);
 
-       h1.handleRequest(request2);
+        assertEquals("Negative", request2.getDesciption());
 
-       assertEquals("Negative", request2.getDesciption());
-
-     
-       Request request3 = new Request(0, "");
+        Request request3 = new Request(0, "");
 
         h1.handleRequest(request3);
 
-       assertEquals("Zero" , request3.getDesciption());
+        assertEquals("Zero", request3.getDesciption());
     }
 
+    @Test
+    public void testCommand() {
+
+        Stock stock = new Stock();
+
+        AbstractStock buyStock = new BuyStock(stock);
+
+        AbstractStock sellStock = new SellStock(stock);
+
+        Agent agent = new Agent();
+
+        agent.placeOrder(buyStock);
+        agent.placeOrder(buyStock);
+        assertEquals(2, stock.getStockCount());
+
+
+        agent.placeOrder(sellStock);
+        assertEquals(1, stock.getStockCount());
+
+    }
 
 }
