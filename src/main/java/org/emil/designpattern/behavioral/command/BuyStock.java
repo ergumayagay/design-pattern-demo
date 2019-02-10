@@ -2,13 +2,14 @@ package org.emil.designpattern.behavioral.command;
 
 public class BuyStock extends AbstractStock{
 
-    public BuyStock(Stock stock){
-        super(stock);
-    }
+    public BuyStock(Stock stock) {
 
-    @Override
+    	this.stock = stock;
+	}
+
+	@Override
     public void execute() {
-       getStock().buy();
+       stock.buy();
     }
 
 

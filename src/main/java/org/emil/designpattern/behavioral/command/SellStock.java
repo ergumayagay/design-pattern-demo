@@ -1,13 +1,13 @@
 package org.emil.designpattern.behavioral.command;
 
 public class SellStock extends AbstractStock{
-
-    public SellStock(Stock stock){
-        super(stock);
-    }
+	
+	public SellStock(Stock stock) {
+		this.stock = stock;
+	}
 
     @Override
     public void execute() {
-        getStock().sell();
+       stock.sell();
     }
 }

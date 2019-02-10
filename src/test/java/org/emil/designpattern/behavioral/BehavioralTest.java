@@ -15,6 +15,10 @@ import org.emil.designpattern.behavioral.command.Stock;
 import org.emil.designpattern.behavioral.iterator.Iterator;
 import org.emil.designpattern.behavioral.iterator.NameRepository;
 import org.emil.designpattern.behavioral.mediator.User;
+import org.emil.designpattern.behavioral.observer.BinaryObserver;
+import org.emil.designpattern.behavioral.observer.HexaObserver;
+import org.emil.designpattern.behavioral.observer.OctalObserver;
+import org.emil.designpattern.behavioral.observer.Subject;
 import org.junit.Test;
 
 public class BehavioralTest {
@@ -53,9 +57,9 @@ public class BehavioralTest {
 
         Stock stock = new Stock();
 
-        AbstractStock buyStock = new BuyStock(stock);
+        BuyStock buyStock = new BuyStock(stock);
 
-        AbstractStock sellStock = new SellStock(stock);
+        SellStock sellStock = new SellStock(stock);
 
         Agent agent = new Agent();
 
@@ -102,6 +106,22 @@ public class BehavioralTest {
     	mia.sendMessage("I love you");
     	
     	emil.sendMessage("I love you too");
+    }
+    
+    @Test
+    public void testObserver() {
+    	
+    	Subject subject = new Subject();
+    	
+    	new HexaObserver(subject);
+    	new BinaryObserver(subject);
+    	new OctalObserver(subject);
+    	
+    	System.out.println("State: 15");
+    	subject.setState(15);
+    	System.out.println("State: 10");
+    	subject.setState(10);
+    	
     }
 
 }
