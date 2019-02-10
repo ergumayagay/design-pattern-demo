@@ -12,6 +12,9 @@ import org.emil.designpattern.behavioral.command.Agent;
 import org.emil.designpattern.behavioral.command.BuyStock;
 import org.emil.designpattern.behavioral.command.SellStock;
 import org.emil.designpattern.behavioral.command.Stock;
+import org.emil.designpattern.behavioral.iterator.Iterator;
+import org.emil.designpattern.behavioral.iterator.NameRepository;
+import org.emil.designpattern.behavioral.mediator.User;
 import org.junit.Test;
 
 public class BehavioralTest {
@@ -64,6 +67,41 @@ public class BehavioralTest {
         agent.placeOrder(sellStock);
         assertEquals(1, stock.getStockCount());
 
+    }
+    
+    @Test
+    public void testIterator() {
+    	
+    	NameRepository nameRepository = new NameRepository();
+    	
+    	//using for loop
+    	System.out.println("Iterator using for loop ");
+    	for(Iterator iterator = nameRepository.getIterator(); iterator.hasNext(); ) {
+    	//	String name = iterator.next().toString();
+    		
+    		String name = (String) iterator.next();
+    		
+    		System.out.println(name);
+    	}
+    	
+    	System.out.println("Iterator using while");
+    	Iterator iter = nameRepository.getIterator();
+    	while(iter.hasNext()) {
+    		System.out.println((String)iter.next());
+    	}
+    	
+    }
+    
+    @Test
+    public void testMediator() {
+    	
+    	User emil = new User("Emil");
+    	
+    	User mia = new User("Mia");
+    	
+    	mia.sendMessage("I love you");
+    	
+    	emil.sendMessage("I love you too");
     }
 
 }
