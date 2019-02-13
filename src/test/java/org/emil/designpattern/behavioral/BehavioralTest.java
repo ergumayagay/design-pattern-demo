@@ -19,6 +19,10 @@ import org.emil.designpattern.behavioral.observer.BinaryObserver;
 import org.emil.designpattern.behavioral.observer.HexaObserver;
 import org.emil.designpattern.behavioral.observer.OctalObserver;
 import org.emil.designpattern.behavioral.observer.Subject;
+import org.emil.designpattern.behavioral.strategy.AggressiveBehaviour;
+import org.emil.designpattern.behavioral.strategy.Defensive;
+import org.emil.designpattern.behavioral.strategy.NormalBehaviour;
+import org.emil.designpattern.behavioral.strategy.Robot;
 import org.junit.Test;
 
 public class BehavioralTest {
@@ -122,6 +126,30 @@ public class BehavioralTest {
     	System.out.println("State: 10");
     	subject.setState(10);
     	
+    }
+    
+    @Test
+    public void testStrategy() {
+    	
+    	Robot robot = new Robot("Abi");
+    	
+    	robot.setBehaviour(new AggressiveBehaviour());
+    	
+    	robot.move();
+    	
+    	assertEquals(1, robot.getBehaviour().move());
+    	
+    	robot.setBehaviour(new NormalBehaviour());
+    	
+    	robot.move();
+    	
+    	assertEquals(0, robot.getBehaviour().move());
+    	
+    	robot.setBehaviour(new Defensive());
+    	
+    	robot.move();
+    	
+    	assertEquals(-1, robot.getBehaviour().move());
     }
 
 }
