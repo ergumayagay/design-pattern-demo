@@ -2,6 +2,10 @@ package org.emil.designpattern.behavioral;
 
 import static org.junit.Assert.assertEquals;
 
+import org.emi.designpattern.behavioral.visitor.ComputerPartDisplayVisitor;
+import org.emi.designpattern.behavioral.visitor.Keyboard;
+import org.emi.designpattern.behavioral.visitor.Monitor;
+import org.emi.designpattern.behavioral.visitor.Mouse;
 import org.emil.designpattern.behavioral.chainofresponsibility.ConcreteHandler1;
 import org.emil.designpattern.behavioral.chainofresponsibility.ConcreteHandler2;
 import org.emil.designpattern.behavioral.chainofresponsibility.ConcreteHandler3;
@@ -156,9 +160,31 @@ public class BehavioralTest {
     
     @Test
     public void testTemplateMethod() {
-    	Trip packageA = new PackageA();
     	
-    	Trip packageB = new PackageB();
+    	@SuppressWarnings("unused")
+		Trip packageA = new PackageA();
+    	
+    	
+    	@SuppressWarnings("unused")
+		Trip packageB = new PackageB();
+    }
+    
+    @Test
+    public void testVisitor() {
+    	
+    	ComputerPartDisplayVisitor visitor = new ComputerPartDisplayVisitor();
+    	
+    	Monitor monitor = new Monitor();
+    	monitor.accept(visitor);
+    	
+    	//monitor.accept(new ComputerPartDisplayVisitor());
+    	
+    	Keyboard keyboard = new Keyboard();
+    	keyboard.accept(visitor);
+    	
+    	Mouse mouse = new Mouse();
+    	mouse.accept(visitor);
+    	
     }
 
 }
