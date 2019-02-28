@@ -7,7 +7,6 @@ import org.emil.designpattern.behavioral.chainofresponsibility.ConcreteHandler2;
 import org.emil.designpattern.behavioral.chainofresponsibility.ConcreteHandler3;
 import org.emil.designpattern.behavioral.chainofresponsibility.Handler;
 import org.emil.designpattern.behavioral.chainofresponsibility.Request;
-import org.emil.designpattern.behavioral.command.AbstractStock;
 import org.emil.designpattern.behavioral.command.Agent;
 import org.emil.designpattern.behavioral.command.BuyStock;
 import org.emil.designpattern.behavioral.command.SellStock;
@@ -23,6 +22,9 @@ import org.emil.designpattern.behavioral.strategy.AggressiveBehaviour;
 import org.emil.designpattern.behavioral.strategy.Defensive;
 import org.emil.designpattern.behavioral.strategy.NormalBehaviour;
 import org.emil.designpattern.behavioral.strategy.Robot;
+import org.emil.designpattern.behavioral.template.method.PackageA;
+import org.emil.designpattern.behavioral.template.method.PackageB;
+import org.emil.designpattern.behavioral.template.method.Trip;
 import org.junit.Test;
 
 public class BehavioralTest {
@@ -150,6 +152,13 @@ public class BehavioralTest {
     	robot.move();
     	
     	assertEquals(-1, robot.getBehaviour().move());
+    }
+    
+    @Test
+    public void testTemplateMethod() {
+    	Trip packageA = new PackageA();
+    	
+    	Trip packageB = new PackageB();
     }
 
 }
