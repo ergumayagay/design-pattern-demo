@@ -29,6 +29,8 @@ import org.emil.designpattern.behavioral.strategy.Robot;
 import org.emil.designpattern.behavioral.template.method.PackageA;
 import org.emil.designpattern.behavioral.template.method.PackageB;
 import org.emil.designpattern.behavioral.template.method.Trip;
+import org.emil.dessignpattern.behavioral.nullobject.AbstractCustomer;
+import org.emil.dessignpattern.behavioral.nullobject.CustomerFactory;
 import org.junit.Test;
 
 public class BehavioralTest {
@@ -184,6 +186,27 @@ public class BehavioralTest {
     	
     	Mouse mouse = new Mouse();
     	mouse.accept(visitor);
+    	
+    }
+    
+    @Test
+    public void testNullObject() {
+    	
+    	//Found in the array
+    	AbstractCustomer rec = CustomerFactory.getCustomer("Rec");
+    	AbstractCustomer abi = CustomerFactory.getCustomer("Abi");
+    	AbstractCustomer nigel = CustomerFactory.getCustomer("Nigel");
+    	AbstractCustomer jen = CustomerFactory.getCustomer("Jen");
+    	
+    	//Not found
+    	AbstractCustomer emil = CustomerFactory.getCustomer("Emil");
+    	
+    	assertEquals("Rec", rec.getName());
+    	assertEquals("Nigel", nigel.getName());
+    	assertEquals("Jen", jen.getName());
+    	assertEquals("Abi", abi.getName());
+    	
+    	assertEquals("No customer found", emil.getName());
     	
     }
 
