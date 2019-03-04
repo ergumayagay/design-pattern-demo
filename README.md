@@ -1,4 +1,4 @@
-# design-pattern-demo
+# design-pattern-compilation
 
 This project serves as a reference for the different design patterns written in Java found in various websites.
 
