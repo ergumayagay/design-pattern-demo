@@ -8,4 +8,4 @@ https://www.javatpoint.com/
 
 https://www.oodesign.com/
 
-https://www.tutorialspoint.com/design_pattern/index.htm
+https://www.tutorialspoint.com/design_pattern/
