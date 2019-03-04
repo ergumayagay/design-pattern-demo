@@ -1,5 +1,6 @@
 # design-pattern-demo
-Sample codes on design patterns written in Java
+
+This project serves as a reference for the different design patterns written in Java found in various websites.
 
 Credits to: 
 
