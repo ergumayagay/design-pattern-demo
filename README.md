@@ -4,8 +4,7 @@ This project serves as a reference for the different design patterns written in 
 
 Credits to: 
 
-https://www.javatpoint.com/
-
-https://www.oodesign.com/
-
-https://www.tutorialspoint.com/design_pattern/
+* https://www.javatpoint.com/
+* https://www.oodesign.com/
+* https://www.tutorialspoint.com/design_pattern/
+* https://java-design-patterns.com/
