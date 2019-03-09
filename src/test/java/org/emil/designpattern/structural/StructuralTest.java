@@ -1,5 +1,7 @@
 package org.emil.designpattern.structural;
 
+import org.emi.designpattern.structural.composite.LetterComposite;
+import org.emi.designpattern.structural.composite.Messenger;
 import org.emil.designpattern.structural.adapter.AudioPlayer;
 import org.emil.designpattern.structural.bridge.Circle;
 import org.emil.designpattern.structural.bridge.GreenCircle;
@@ -32,5 +34,12 @@ public class StructuralTest {
 		
 		Shape greenCircle = new Circle(100,100,10, new GreenCircle());
 		greenCircle.draw();
+	}
+	
+	@Test
+	public void testComposite() {
+		
+		LetterComposite orcMessage = new Messenger().messageFromOrcs();
+		orcMessage.print();
 	}
 }
