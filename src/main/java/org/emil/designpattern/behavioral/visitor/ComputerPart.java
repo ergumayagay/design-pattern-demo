@@ -1,4 +1,4 @@
-package org.emi.designpattern.behavioral.visitor;
+package org.emil.designpattern.behavioral.visitor;
 
 /**
  * This represents the Visitable Interface

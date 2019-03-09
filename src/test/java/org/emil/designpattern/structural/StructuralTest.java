@@ -2,19 +2,22 @@ package org.emil.designpattern.structural;
 
 import static org.junit.Assert.assertEquals;
 
-import org.emi.designpattern.structural.composite.LetterComposite;
-import org.emi.designpattern.structural.composite.Messenger;
-import org.emi.designpattern.structural.decorator.ClubbedTroll;
-import org.emi.designpattern.structural.decorator.SimpleTroll;
-import org.emi.designpattern.structural.decorator.Troll;
 import org.emil.designpattern.structural.adapter.AudioPlayer;
 import org.emil.designpattern.structural.bridge.Circle;
 import org.emil.designpattern.structural.bridge.GreenCircle;
 import org.emil.designpattern.structural.bridge.RedCircle;
 import org.emil.designpattern.structural.bridge.Shape;
+import org.emil.designpattern.structural.composite.LetterComposite;
+import org.emil.designpattern.structural.composite.Messenger;
+import org.emil.designpattern.structural.decorator.ClubbedTroll;
+import org.emil.designpattern.structural.decorator.SimpleTroll;
+import org.emil.designpattern.structural.decorator.Troll;
 import org.emil.designpattern.structural.flyweight.Potion;
 import org.emil.designpattern.structural.flyweight.PotionFactory;
 import org.emil.designpattern.structural.flyweight.PotionFactory.PotionType;
+import org.emil.designpattern.structural.memento.Star;
+import org.emil.designpattern.structural.memento.StarMemento;
+import org.emil.designpattern.structural.memento.StarType;
 import org.junit.Test;
 
 public class StructuralTest {
@@ -75,5 +78,21 @@ public class StructuralTest {
 		
 		
 		invisibility.drink();
+	}
+	
+	@Test
+	public void testMemento() {
+		
+		Star star = new Star(StarType.SUN, 10000000, 500000);
+		System.out.println(star.toString());
+		
+		StarMemento state = star.getMemento();
+		star.timePasses();
+		System.out.println(star.toString());
+		star.timePasses();
+		System.out.println(star.toString());
+		star.setMemento(state);
+		System.out.println(star.toString());
+		
 	}
 }

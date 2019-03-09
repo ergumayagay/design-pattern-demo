@@ -1,4 +1,4 @@
-package org.emi.designpattern.structural.decorator;
+package org.emil.designpattern.structural.decorator;
 
 public interface Troll {
 

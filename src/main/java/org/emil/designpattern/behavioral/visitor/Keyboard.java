@@ -1,6 +1,6 @@
-package org.emi.designpattern.behavioral.visitor;
+package org.emil.designpattern.behavioral.visitor;
 
-public class Mouse implements ComputerPart {
+public class Keyboard implements ComputerPart {
 	
 	//TODO add some properties
 
@@ -8,6 +8,7 @@ public class Mouse implements ComputerPart {
 	public void accept(ComputerPartVisitor computerPartVisitor) {
 		
 		computerPartVisitor.visit(this);
+
 	}
 
 }

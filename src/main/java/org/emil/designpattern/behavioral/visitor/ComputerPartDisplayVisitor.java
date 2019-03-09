@@ -1,4 +1,4 @@
-package org.emi.designpattern.behavioral.visitor;
+package org.emil.designpattern.behavioral.visitor;
 
 public class ComputerPartDisplayVisitor implements ComputerPartVisitor {
 

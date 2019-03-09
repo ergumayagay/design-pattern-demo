@@ -1,6 +1,6 @@
 //Code taken from https://java-design-patterns.com/patterns/composite/
 
-package org.emi.designpattern.structural.composite;
+package org.emil.designpattern.structural.composite;
 
 import java.util.ArrayList;
 import java.util.Arrays;

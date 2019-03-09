@@ -1,4 +1,4 @@
-package org.emi.designpattern.structural.composite;
+package org.emil.designpattern.structural.composite;
 
 
 //Code taken from https://java-design-patterns.com/patterns/composite/

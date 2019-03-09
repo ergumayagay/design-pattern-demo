@@ -2,10 +2,6 @@ package org.emil.designpattern.behavioral;
 
 import static org.junit.Assert.assertEquals;
 
-import org.emi.designpattern.behavioral.visitor.ComputerPartDisplayVisitor;
-import org.emi.designpattern.behavioral.visitor.Keyboard;
-import org.emi.designpattern.behavioral.visitor.Monitor;
-import org.emi.designpattern.behavioral.visitor.Mouse;
 import org.emil.designpattern.behavioral.chainofresponsibility.ConcreteHandler1;
 import org.emil.designpattern.behavioral.chainofresponsibility.ConcreteHandler2;
 import org.emil.designpattern.behavioral.chainofresponsibility.ConcreteHandler3;
@@ -29,6 +25,10 @@ import org.emil.designpattern.behavioral.strategy.Robot;
 import org.emil.designpattern.behavioral.template.method.PackageA;
 import org.emil.designpattern.behavioral.template.method.PackageB;
 import org.emil.designpattern.behavioral.template.method.Trip;
+import org.emil.designpattern.behavioral.visitor.ComputerPartDisplayVisitor;
+import org.emil.designpattern.behavioral.visitor.Keyboard;
+import org.emil.designpattern.behavioral.visitor.Monitor;
+import org.emil.designpattern.behavioral.visitor.Mouse;
 import org.emil.dessignpattern.behavioral.nullobject.AbstractCustomer;
 import org.emil.dessignpattern.behavioral.nullobject.CustomerFactory;
 import org.junit.Test;
