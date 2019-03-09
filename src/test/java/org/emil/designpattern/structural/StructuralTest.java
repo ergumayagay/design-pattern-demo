@@ -12,6 +12,9 @@ import org.emil.designpattern.structural.bridge.Circle;
 import org.emil.designpattern.structural.bridge.GreenCircle;
 import org.emil.designpattern.structural.bridge.RedCircle;
 import org.emil.designpattern.structural.bridge.Shape;
+import org.emil.designpattern.structural.flyweight.Potion;
+import org.emil.designpattern.structural.flyweight.PotionFactory;
+import org.emil.designpattern.structural.flyweight.PotionFactory.PotionType;
 import org.junit.Test;
 
 public class StructuralTest {
@@ -62,5 +65,15 @@ public class StructuralTest {
 		
 		assertEquals(20, clubbledTroll.getAttackPower());
 		
+	}
+	
+	@Test
+	public void testFlyweight() {
+		PotionFactory factory = new PotionFactory();
+		
+		Potion invisibility = factory.createPotion(PotionType.INVISIBILITY);
+		
+		
+		invisibility.drink();
 	}
 }
